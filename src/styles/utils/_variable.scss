@@ -1,0 +1,38 @@
+@use 'sass:map';
+
+// =========================== variable
+
+// -- media query
+$size: (
+  // mobile
+  sm: 577.98px,
+  // pad
+  md: 766.98px,
+  //  padLg
+  lg: 991.98px,
+  // wide
+  xl: 1366.98px,
+  //deskTop
+  2xl: 1659.98px
+);
+
+// =========================== mixin
+// -- media query
+@mixin media($key: lg) {
+  @media screen and (max-width: map.get($size, $key)) {
+    @content;
+  }
+}
+
+// -- size
+@mixin size($w: 100%, $h: auto) {
+  width: $w;
+  height: $h;
+}
+
+// -- flex all center
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

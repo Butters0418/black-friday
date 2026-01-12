@@ -1,0 +1,21 @@
+// @use 'utils/bootstrap-replacement';
+@use 'init';
+
+//layout
+@use 'layout/global'; // reset
+
+// loading ani
+@use 'layout/loadingAni'; // loading ani
+
+// banner
+@use 'layout/banner'; // banner
+
+// bank
+@use 'layout/bank'; // 銀行7格
+@use 'layout/mainPd'; // 商品8格
+
+// sub slider
+@use 'layout/subSlider'; // 輪播4檔
+
+// theme
+@use 'layout/theme'; // 商品廚窗

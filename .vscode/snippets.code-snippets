@@ -1,0 +1,66 @@
+{
+  "jsx 元件 comment": {
+    "prefix": "//",
+    "body": [
+      "// 元件說明:",
+      "",
+      "// packages",
+      "",
+      "// stores",
+      "",
+      "// custom hooks & utils",
+      "",
+      "// components",
+      "",
+      "// images",
+      "",
+      "// style",
+      "",
+      "// constants",
+      ""
+    ],
+    "description": "jsx 元件 comment"
+  },
+  "import tailwind & twin macro": {
+    "prefix": "iptw",
+    "body": ["import tw, { styled } from 'twin.macro';"],
+    "description": "import tailwind & twin macro"
+  },
+  "fakeimg": {
+    "prefix": "fakeimg",
+    "body": ["<img src=\"https://fakeimg.pl/$1x$2/\" alt=\"\" />"],
+    "description": "fakeimg"
+  },
+  "picture with webp": {
+    "prefix": "pcw",
+    "body": [
+      "<picture>",
+      "  <source srcSet={$1} type=\"image/webp\" />",
+      "  <img src={$2} alt=\"$3\" />",
+      "</picture>"
+    ],
+    "description": "picture with webp"
+  },
+  "picture tag width media": {
+    "prefix": "pcm",
+    "body": [
+      "<picture>",
+      "  <source srcSet={$1} media=\"(min-width: 767px)\"/>",
+      "  <img src={$2} alt=\"$3\" />",
+      "</picture>"
+    ],
+    "description": "picture tag width media"
+  },
+  "twin.macro style component": {
+    "prefix": "stw",
+    "body": [
+      "export const a$1 = styled.div`",
+      "  ${tw`$2`}",
+      "  ${tw`sm:($3)`}",
+      "  ${tw`lg:($4)`}",
+      "`;",
+      ""
+    ],
+    "description": "twin.macro style component"
+  }
+}

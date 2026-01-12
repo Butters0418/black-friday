@@ -1,0 +1,581 @@
+@use '../init' as *;
+
+// 主題櫃窗
+
+.theme {
+  overflow: hidden;
+  position: relative;
+  padding: 90px 0 100px;
+  background-color: $theme1Bg;
+  @include media(2xl) {
+    padding: 80px 0;
+  }
+  @include media(xl) {
+    padding: 60px 0;
+  }
+  @include media(md) {
+    padding: 30px 0;
+  }
+  &.theme1 {
+    background-color: $theme1Bg;
+  }
+  &.theme2 {
+    background-color: $theme2Bg;
+  }
+  &.theme3 {
+    background-color: $theme3Bg;
+  }
+  &.theme4 {
+    background-color: $theme4Bg;
+  }
+  &.theme5 {
+    background-color: $theme5Bg;
+  }
+  &.theme6 {
+    background-color: $theme6Bg;
+  }
+
+  // 主題櫥窗 - 背景
+  &-bg {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 2;
+    width: 740px;
+    @include media(2xl) {
+      width: 580px;
+    }
+    @include media(xl) {
+      width: 520px;
+    }
+    @include media(lg) {
+      width: 460px;
+    }
+    @include media(md) {
+      width: 60%;
+    }
+    &.bg-1 {
+      transform: translateX(-956px);
+      @include media(2xl) {
+        transform: translateX(-750px);
+      }
+      @include media(xl) {
+        transform: translateX(-700px);
+      }
+      @include media(lg) {
+        display: none;
+      }
+    }
+    &.bg-2 {
+      transform: translateX(216px);
+      @include media(2xl) {
+        transform: translateX(190px);
+      }
+      @include media(xl) {
+        transform: translateX(180px);
+      }
+      @include media(lg) {
+        transform: translateX(-70px);
+      }
+      @include media(md) {
+        transform: translateX(0);
+        left: auto;
+        right: -2%;
+      }
+    }
+  }
+
+  // 跑馬燈
+  &-marquee {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-800px);
+    @include media(2xl) {
+      transform: translateX(-730px);
+    }
+    @include media(xl) {
+      width: 100px;
+      transform: translateX(-600px);
+    }
+    @include media(lg) {
+      display: none;
+    }
+
+    p {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  // 底部彩帶
+  .ribbon {
+    position: relative;
+    z-index: 10;
+    margin-top: 60px;
+    width: 100%;
+    height: 50px;
+    background-image: url('@/assets/layout/bg/theme-ribbon.png');
+    background-repeat: repeat-x;
+    background-size: auto 50px;
+    @include media(xl) {
+      margin-top: 35px;
+    }
+    @include media(md) {
+      margin-top: 15px;
+      height: 30px;
+      background-size: auto 30px;
+    }
+  }
+
+  // 主題櫥窗 - 商品框
+  &-container {
+    max-width: 1230px;
+    padding: 20px 0;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+    @include media(2xl) {
+      max-width: 1140px;
+    }
+    @include media(xl) {
+      max-width: 960px;
+    }
+    @include media(lg) {
+      max-width: 750px;
+    }
+  }
+
+  // 主題櫥窗 - 標題
+  &-title {
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 56px;
+    font-weight: bold;
+    line-height: 1.5;
+    position: relative;
+    letter-spacing: 2px;
+    @include media(lg) {
+      width: 50%;
+      padding: 100px 5px 10px;
+      margin-bottom: 160px;
+      font-size: 48px;
+    }
+    @include media(md) {
+      font-size: 6.5vw;
+      padding-top: 14vw;
+      margin-bottom: 16vw;
+    }
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 3px;
+      background-color: #1f1f1f;
+    }
+  }
+
+  // 主要商品區容器
+  &-main {
+    margin-top: 46px;
+    display: flex;
+    @include media(xl) {
+      margin-top: 20px;
+    }
+  }
+
+  // 主要商品
+  .topPd {
+    width: 100%;
+    max-width: 61%;
+    flex: 0 0 61%;
+    position: relative;
+    color: #1f1f1f;
+    margin-left: 65px;
+    text-decoration: none;
+    transition: 0.3s;
+    @include media(2xl) {
+      margin-left: 40px;
+    }
+    @include media(xl) {
+      margin-left: 20px;
+      max-width: 70%;
+      flex: 0 0 70%;
+    }
+    @include media(lg) {
+      margin-left: 15px;
+      max-width: 93%;
+      flex: 0 0 93%;
+      margin-bottom: 55px;
+    }
+    @include media(sm) {
+      margin-left: 10px;
+      max-width: 92%;
+      flex: 0 0 92%;
+      margin-bottom: 35px;
+    }
+    &:after {
+      content: '';
+      display: block;
+      border-radius: 0 0 40px 0;
+      border: 5px solid #fff;
+      position: absolute;
+      z-index: 3;
+      bottom: -20px;
+      left: 20px;
+      width: 100%;
+      height: calc(100% - 30px);
+      @include media(md) {
+        height: 100%;
+      }
+      @include media(sm) {
+        border-radius: 0 0 30px 0;
+        bottom: -12px;
+        left: 12px;
+      }
+    }
+
+    &:hover {
+      .topPd-img {
+        transform: translate(-5px, -5px);
+        filter: brightness(1.05);
+      }
+    }
+    &-img {
+      position: relative;
+      z-index: 5;
+      box-shadow: 0px 0px 12px rgba(151, 48, 67, 0.3);
+      transition: 0.3s;
+      will-change: transform;
+    }
+
+    // 內容資訊
+    &-text {
+      position: relative;
+      z-index: 5;
+      padding: 40px 20px 10px;
+      transition: 0.3s;
+      @include media(lg) {
+        padding: 80px 30px 10px;
+      }
+      @include media(md) {
+        padding: 40px 0px 10px 20px;
+        display: flex;
+        flex-direction: column;
+      }
+      @include media(sm) {
+        padding: 30px 0px 5px 10px;
+      }
+    }
+
+    &-title {
+      padding: 20px 5px;
+      margin-bottom: 25px;
+      text-align: center;
+      font-size: 20px;
+      line-height: 1;
+      color: $mainColor;
+      background-color: #1f1f1f;
+      transition: 0.3s;
+      @include media(md) {
+        padding: 8px 4px;
+      }
+      @include media(sm) {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+    }
+
+    &-name {
+      text-align: left;
+      font-size: 26px;
+      margin-bottom: 40px;
+      @include media(lg) {
+        font-size: 22px;
+        margin-bottom: 20px;
+      }
+      @include media(sm) {
+        font-size: 16px;
+        margin-bottom: 0;
+        line-height: 1.4;
+      }
+    }
+
+    &-more {
+      position: absolute;
+      right: 40px;
+      bottom: 0;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      font-size: 16px;
+      img {
+        margin-right: 5px;
+      }
+      @include media(md) {
+        display: none;
+      }
+    }
+  }
+
+  // 價格
+  .pd-discountPrice {
+    font-family: Montserrat;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 32px;
+    font-style: italic;
+    font-weight: bold;
+    line-height: 1;
+    @include media(md) {
+      margin-top: auto;
+    }
+    @include media(sm) {
+      font-size: 24px;
+    }
+    .sale {
+      font-family: Roboto;
+      font-style: normal;
+      font-size: 18px;
+      padding: 5px;
+      border: 1px solid #1f1f1f;
+      letter-spacing: 0.1rem;
+      margin-right: 6px;
+      @include media(sm) {
+        font-size: 14px;
+        padding: 4px;
+      }
+    }
+
+    .dollar {
+      font-size: 20px;
+      margin-right: 2px;
+      @include media(sm) {
+        font-size: 16px;
+      }
+    }
+  }
+
+  // 其他商品
+  .other-pd {
+    margin-top: 65px;
+    position: relative;
+    @include media(xl) {
+      margin-top: 40px;
+    }
+    @include media(lg) {
+      margin-top: 0;
+    }
+    &.other-pd-second {
+      left: 100px;
+      @include media(2xl) {
+        left: 70px;
+      }
+      @include media(xl) {
+        left: 0;
+      }
+    }
+    .pd {
+      padding: 0 10px;
+      @include media(lg) {
+        margin-bottom: 10px;
+      }
+      @include media(sm) {
+        padding: 0 5px;
+      }
+    }
+
+    a {
+      padding: 8px;
+      text-align: left;
+      text-decoration: none;
+      color: #1f1f1f;
+      @include media(sm) {
+        padding: 5px;
+      }
+      &:hover {
+        .pd-img {
+          filter: brightness(1.05);
+        }
+        .pd-title {
+          transform: translateY(-5px);
+        }
+      }
+    }
+    .pd-img {
+      border-radius: 0 40px 0 0;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    h4 {
+      font-size: 18px;
+      line-height: 28px;
+      font-weight: normal;
+      margin-bottom: 5px;
+      @include media(sm) {
+        font-size: 16px;
+        line-height: 1.4;
+      }
+    }
+
+    .pd-marketPrice {
+      font-size: 18px;
+      text-decoration: line-through;
+      margin-bottom: 26px;
+      @include media(sm) {
+        margin-bottom: 18px;
+      }
+    }
+    .pd-title {
+      text-align: center;
+      min-width: 80%;
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      padding: 13px 30px;
+      margin-left: -8px;
+      margin-top: -5px;
+      margin-bottom: 11px;
+      font-size: 16px;
+      line-height: 1;
+      color: $mainColor;
+      background-color: #1f1f1f;
+      transition: 0.3s;
+      will-change: transform;
+      @include media(lg) {
+        margin-left: 0;
+      }
+      @include media(sm) {
+        width: 100%;
+        margin-left: -5px;
+        font-size: 14px;
+        padding: 8px 4px;
+      }
+    }
+  }
+  .theme-swiper {
+    position: relative;
+    z-index: 10;
+    margin-top: 60px;
+    @include media(lg) {
+      margin-top: 40px;
+    }
+    @include media(sm) {
+      margin-top: 20px;
+    }
+    .swiper-slide {
+      width: 160px;
+      @include media(lg) {
+        width: 120px;
+      }
+      @include media(sm) {
+        width: 100px;
+      }
+      img {
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+  }
+
+  // 靠右樣式
+  &.theme-style-right {
+    // 背景
+    .theme-bg {
+      &.bg-1 {
+        display: block;
+        @include media(lg) {
+          transform: translate(-390px);
+        }
+        @include media(md) {
+          transform: translateX(0);
+          left: -2%;
+          right: auto;
+        }
+      }
+      &.bg-2 {
+        @include media(lg) {
+          display: none;
+        }
+      }
+    }
+
+    // 標題
+    .theme-title {
+      @include media(lg) {
+        margin-left: 50%;
+      }
+    }
+    // 跑馬燈
+    .theme-marquee {
+      top: 0;
+      bottom: auto;
+      transform: translateX(650px);
+      @include media(2xl) {
+        transform: translateX(580px);
+      }
+      @include media(xl) {
+        transform: translateX(490px);
+      }
+      img {
+        transform: rotate(180deg);
+      }
+    }
+
+    // 主要商品容器
+    .theme-main {
+      justify-content: flex-end;
+      .topPd {
+        margin-left: 0;
+        margin-right: 65px;
+        @include media(2xl) {
+          margin-right: 40px;
+        }
+        @include media(xl) {
+          margin-right: 20px;
+        }
+        @include media(sm) {
+          margin-right: 10px;
+        }
+        &:after {
+          border-radius: 0 0 0 40px;
+          bottom: -20px;
+          left: auto;
+          right: 20px;
+          @include media(sm) {
+            border-radius: 0 0 0 30px;
+            bottom: -12px;
+            right: 12px;
+          }
+        }
+      }
+      .topPd-text {
+        @include media(md) {
+          padding: 40px 20px 10px 0px;
+        }
+        @include media(sm) {
+          padding: 30px 10px 5px 5px;
+        }
+      }
+    }
+
+    // 第二塊偏移商品
+    .other-pd.other-pd-second {
+      left: auto;
+      right: 100px;
+      @include media(2xl) {
+        right: 70px;
+      }
+      @include media(xl) {
+        right: 0;
+      }
+    }
+  }
+}

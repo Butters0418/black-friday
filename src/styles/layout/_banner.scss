@@ -1,0 +1,261 @@
+@use '../init' as *;
+
+.banner {
+  width: 1000px;
+  margin: 0 auto;
+  * {
+    // outline: 1px solid #fff;
+  }
+  @include media(2xl) {
+    width: 780px;
+  }
+  @include media(xl) {
+    width: 680px;
+  }
+  @include media(lg) {
+    width: 750px;
+    padding: 18vw 0 0;
+  }
+  @include media(md) {
+    width: 100%;
+    padding: 26vw 0 6vw;
+  }
+  // 跑馬燈
+  &-marquee {
+    width: 4580px;
+    left: 50%;
+    position: absolute;
+    background-color: $mainColor;
+    z-index: 5;
+    @include media(lg) {
+      width: 3000px;
+    }
+    p {
+      display: flex;
+      flex-wrap: nowrap;
+    }
+    &.marquee1 {
+      top: 80px;
+      transform-origin: top left;
+      transform: translateX(-1300px) rotate(35deg);
+      @include media(2xl) {
+        transform: translateX(-1250px) rotate(35deg);
+      }
+      @include media(lg) {
+        top: 670px;
+        transform: translateX(-1300px) rotate(25deg);
+      }
+      @include media(md) {
+        top: 45vw;
+        transform: translateX(-250vw) rotate(25deg);
+      }
+    }
+    &.marquee2 {
+      top: 1900px;
+      transform-origin: top left;
+      transform: translateX(-300px) rotate(-55deg);
+      @include media(2xl) {
+        transform: translateX(-500px) rotate(-55deg);
+      }
+      @include media(lg) {
+        top: -160px;
+        transform: translateX(0px) rotate(30deg);
+      }
+      @include media(md) {
+        top: -10vw;
+        transform: translateX(15vw) rotate(30deg);
+      }
+    }
+  }
+
+  // 輪播
+  .swiper-link {
+    position: relative;
+    // transform: perspective(1000px);
+    // transform-style: preserve-3d;
+    picture {
+      opacity: 0;
+    }
+    .slider-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 5;
+    }
+    .slider-img-1 {
+      position: relative;
+      z-index: 5;
+    }
+    .slider-img-2 {
+      z-index: 10;
+      // transform: translateZ(20px);
+    }
+    .slider-img-3 {
+      z-index: 15;
+    }
+  }
+}
+
+// 背景字
+.main-text {
+  margin: 0 auto;
+  position: fixed;
+  top: 85px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1500px;
+  z-index: 2;
+  // outline: 1px solid #000;
+  @include media(2xl) {
+    width: 1180px;
+  }
+  @include media(xl) {
+    width: 1030px;
+  }
+  @include media(lg) {
+    width: 681px;
+    top: 120px;
+  }
+  @include media(md) {
+    width: 94%;
+    top: 100px;
+  }
+  @include media(sm) {
+    top: 74px;
+  }
+
+  .main-text-limited {
+    position: relative;
+    display: flex;
+    svg {
+      width: auto;
+      fill: $mainTextLimited;
+    }
+    svg {
+      @include media(2xl) {
+        height: 25px;
+      }
+      @include media(xl) {
+        height: 22px;
+      }
+      @include media(lg) {
+        height: 28px;
+      }
+      @include media(md) {
+        height: 22px;
+      }
+      @include media(sm) {
+        height: 14px;
+      }
+    }
+    #limited-2 {
+      margin-left: 7%;
+      @include media(lg) {
+        margin-left: 13%;
+      }
+    }
+    #limited-3 {
+      margin-left: 7%;
+      @include media(lg) {
+        margin-left: 13%;
+      }
+    }
+    #limited-4 {
+      margin-left: 11%;
+      @include media(lg) {
+        margin-left: 17%;
+      }
+    }
+    #limited-5 {
+      margin-left: 7%;
+      @include media(lg) {
+        margin-left: 13%;
+      }
+    }
+    #limited-6 {
+      position: absolute;
+      top: 0;
+      right: 16%;
+      // @include media(lg) {
+      //   position: fixed;
+      //   top: 920px;
+      //   right: 100px;
+      // }
+      @include media(md) {
+        position: fixed;
+        top: 133vw;
+        right: 15vw;
+      }
+    }
+    #limited-7 {
+      position: absolute;
+      top: 0;
+      right: 2%;
+      // @include media(lg) {
+      //   position: fixed;
+      //   top: 920px;
+      //   right: 0px;
+      // }
+      @include media(md) {
+        position: fixed;
+        top: 133vw;
+        right: 3vw;
+      }
+    }
+  }
+
+  // sale 黑五
+  .main-text-sale {
+    margin-top: 68px;
+    padding: 0 6%;
+    position: relative;
+    display: flex;
+    svg {
+      width: auto;
+      fill: $mainTextTitle;
+    }
+    @include media(2xl) {
+      margin-top: 50px;
+    }
+    @include media(xl) {
+      margin-top: 40px;
+    }
+    @include media(lg) {
+      margin-top: 50px;
+      padding: 0 3%;
+      display: flex;
+    }
+    @include media(md) {
+      margin-top: 10vw;
+    }
+    @include media(sm) {
+      margin-top: 7vw;
+      padding: 0 2%;
+    }
+    svg {
+      margin: 0 5px;
+      transform-origin: bottom center;
+      @include media(2xl) {
+        height: 140px;
+        margin: 0 2px;
+      }
+      @include media(xl) {
+        height: 120px;
+      }
+      @include media(lg) {
+        margin: 0 4px;
+      }
+      @include media(md) {
+        height: 17vw;
+      }
+      @include media(sm) {
+        height: 16vw;
+        margin: 0 2px;
+      }
+    }
+    #sale-5 {
+      margin-left: auto;
+    }
+  }
+}

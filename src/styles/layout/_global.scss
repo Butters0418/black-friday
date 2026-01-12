@@ -1,0 +1,41 @@
+@use '../utils/variable' as *;
+
+.pc {
+  display: block;
+  @include media(md) {
+    display: none;
+  }
+}
+
+.mb {
+  display: none;
+  @include media(md) {
+    display: block;
+  }
+}
+
+.main {
+  overflow: hidden;
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url('@/assets/layout/bg/header-bg.jpg');
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+section {
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}

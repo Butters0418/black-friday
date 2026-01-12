@@ -1,0 +1,40 @@
+@use '../utils/variable' as *;
+
+.container-bank {
+  max-width: 1220px;
+  @include media(2xl) {
+    max-width: 1160px;
+  }
+  @include media(xl) {
+    max-width: 980px;
+  }
+  @include media(lg) {
+    max-width: 770px;
+  }
+  @include media(md) {
+    padding: 0 5px;
+  }
+  @include media(sm) {
+    padding: 0 8px;
+  }
+  > a {
+    padding: 0 5px;
+    @include media(sm) {
+      padding: 0 2px;
+    }
+  }
+
+  &:first-child > a {
+    margin-bottom: 10px;
+    @include media(sm) {
+      margin-bottom: 4px;
+    }
+  }
+  a img {
+    width: 100%;
+    transition: 0.3s;
+  }
+  a:hover img {
+    filter: brightness(1.2);
+  }
+}
