@@ -3,18 +3,22 @@
 .banner {
   width: 1000px;
   margin: 0 auto;
+  min-height: 620px;
   * {
     // outline: 1px solid #fff;
   }
   @include media(2xl) {
     width: 780px;
+    min-height: 483px;
   }
   @include media(xl) {
     width: 680px;
+    min-height: 421px;
   }
   @include media(lg) {
     width: 750px;
     padding: 18vw 0 0;
+    min-height: none;
   }
   @include media(md) {
     width: 100%;
